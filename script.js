@@ -6,18 +6,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.getElementById("lintButton").addEventListener("click", async () => {
+    console.log("Lint button clicked");
     const usfmInput = editor.getValue();
+    console.log("USFM Input:", usfmInput);
     const output = document.getElementById("output");
 
     try {
       const { parseUSFM } = await import("usfm-grammar");
+      console.log("Parsing USFM input");
       const result = parseUSFM(usfmInput);
+      console.log("Parse result:", result);
 
       console.log("Linter Result:", result);
       if (result.messages) {
         console.log(`Linter Messages: ${result}`);
       }
       if (result.ERROR) {
+        console.log("Error found in USFM:", result.ERROR);
         output.innerHTML = "Errors found:<br>" + result.ERROR.replace(/\\n/g, "<br>");
         const errorMatch = result.ERROR.match(/Line (\d+), col (\d+)/);
         if (errorMatch) {
@@ -32,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         output.innerHTML = "No errors found. USFM is valid.";
       }
     } catch (error) {
+      console.error("An error occurred:", error);
       if (error.message.includes("Cannot declare a parameter named 'e' in strict mode")) {
         output.textContent =
           "An internal error occurred likely with the build, check your node version with `nvm install`, then clear your caches and node_modules, then build again.";
