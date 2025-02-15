@@ -7,6 +7,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "codemirror": "^6.0.1",
     "usfm-grammar": "^1.0.0"
   },
   "devDependencies": {
