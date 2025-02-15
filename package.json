@@ -1,5 +1,5 @@
 {
-  "name": "usfm-lint-webapp",
+  "name": "usfm-linter-webapp",
   "version": "1.0.0",
   "description": "A web application for linting USFM documents.",
   "scripts": {
