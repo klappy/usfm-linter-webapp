@@ -19,6 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (result.ERROR) {
         output.innerHTML = "Errors found:<br>" + result.ERROR.replace(/\\n/g, "<br>");
+        const errorMatch = result.ERROR.match(/Line (\d+), col (\d+)/);
+        if (errorMatch) {
+          const lineNumber = parseInt(errorMatch[1], 10) - 1; // Convert to 0-based index
+          editor.addLineClass(lineNumber, "background", "error-line");
+          editor.scrollIntoView({ line: lineNumber, ch: 0 }, 200);
+        }
       } else if (result.messages && result.messages.warnings.length > 0) {
         output.innerHTML = "Warnings found:<br>" + result.messages.warnings.join("<br>");
       } else {
