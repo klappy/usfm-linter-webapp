@@ -1,0 +1,25 @@
+{
+  "name": "usfm-lint-webapp",
+  "version": "1.0.0",
+  "description": "A web application for linting USFM documents.",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "usfm-grammar": "^1.0.0"
+  },
+  "devDependencies": {
+    "events": "^3.3.0",
+    "parcel": "^2.0.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10"
+  },
+  "keywords": [
+    "usfm",
+    "linter",
+    "webapp"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
