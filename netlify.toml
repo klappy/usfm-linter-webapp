@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_ENV = "production"
+  STRICT_MODE = "false"
+
+# You can add more configuration settings as needed
