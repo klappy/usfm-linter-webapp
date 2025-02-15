@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (errorMatch) {
           const lineNumber = parseInt(errorMatch[1], 10) - 1; // Convert to 0-based index
           editor.addLineClass(lineNumber, "background", "error-line");
+          editor.addLineClass(lineNumber, "text", "error-line");
           editor.scrollIntoView({ line: lineNumber, ch: 0 }, 200);
         }
       } else if (result.messages && result.messages.warnings.length > 0) {

@@ -6,6 +6,11 @@ body {
   color: #333;
 }
 
+.CodeMirror pre.error-line {
+  color: darkred;
+  background-color: lightpink;
+}
+
 h1 {
   text-align: center;
   padding: 20px;
