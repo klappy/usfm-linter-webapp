@@ -32,7 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
         output.innerHTML = "No errors found. USFM is valid.";
       }
     } catch (error) {
-      output.textContent = "An error occurred while linting: " + error.message;
+      if (error.message.includes("Cannot declare a parameter named 'e' in strict mode")) {
+        output.textContent =
+          "An internal error occurred likely with the build, check your node version with `nvm install`, then clear your caches and node_modules, then build again.";
+      } else {
+        output.textContent = "An error occurred while linting: " + error.message;
+      }
     }
   });
 });
