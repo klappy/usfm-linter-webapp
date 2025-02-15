@@ -4,7 +4,7 @@
   "description": "A web application for linting USFM documents.",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "build": "npx -p parcel parcel build index.html"
   },
   "dependencies": {
     "codemirror": "^6.0.1",
